@@ -106,13 +106,12 @@ public class SampleCivilian extends AbstractSampleAgent<Civilian> {
       sendRest(time);
       return;
     }
-    if (damage > 0 && random.nextDouble() < ouchProbability) {
-      LOG.info("Shouting in pain");
-      say(OUCH, time);
-    }
     if (buriedness > 0 && random.nextDouble() < helpProbability) {
       LOG.info("Calling for help");
       say(HELP, time);
+    } else if (damage > 0 && random.nextDouble() < ouchProbability) {
+      LOG.info("Shouting in pain");
+      say(OUCH, time);
     }
 
     if (damage == 0 && buriedness == 0) {
