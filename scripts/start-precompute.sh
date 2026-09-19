@@ -2,10 +2,11 @@
 
 . functions.sh
 
-processArgs $*
+processArgs -s $*
 
 # Delete old logs
 rm -f $LOGDIR/*.log
+sh kill.sh
 
 # startGIS
 startKernel --nomenu

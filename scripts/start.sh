@@ -3,7 +3,7 @@ trap "echo 'killing...'; ./kill.sh; exit" INT
 
 . functions.sh
 
-processArgs $*
+processArgs -s $*
 
 # Delete old logs
 rm -f $LOGDIR/*.log
